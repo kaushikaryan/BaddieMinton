@@ -1,10 +1,8 @@
 // Define states
 const states = {
     START: 'Start',
-    PLAYER_A1_SERVES: 'Player A1 Serves',
-    PLAYER_A2_SERVES: 'Player A2 Serves',
-    PLAYER_B1_SERVES: 'Player B1 Serves',
-    PLAYER_B2_SERVES: 'Player B2 Serves',
+    TEAM1_SERVES: 'Team 1 Serves',
+    TEAM2_SERVES: 'Team 2 Serves',
     GAME_OVER: 'Game Over'
 };
 
@@ -31,7 +29,7 @@ function updateServerDot() {
 
 // Start the game
 function startGame() {
-    currentState = states.PLAYER_A2_SERVES;
+    currentState = states.TEAM1_SERVES;
     serving = 'even1';
     updateServerDot();
     scores.team1 = 0;
@@ -49,43 +47,19 @@ function checkGameEnd() {
 }
 
 // Update the score and transition states based on who won the point
-function pointWonBy(currTeam) {
+function pointWonBy(team) {
     if (currentState === states.GAME_OVER) return;
 
-    if (currTeam === 'team1') {
+    if (team === 'team1') {
         scores.team1++;
         scoreTeam1.innerText = scores.team1;
-        if (currentState === states.PLAYER_A1_SERVES) {
-            currentState = states.PLAYER_A1_SERVES;
-            checkServerInTeam('team1');
-            // swapPlayers('team1');
-        } else if (currentState === states.PLAYER_A2_SERVES) {
-            currentState = states.PLAYER_A2_SERVES;
-            checkServerInTeam('team1');
-            // swapPlayers('team1');
-        } else if (currentState === states.PLAYER_B1_SERVES) {
-            currentState = states.PLAYER_A1_SERVES;
-            checkServerInTeam('team1');
-        } else if (currentState === states.PLAYER_B2_SERVES) {
-            currentState = states.PLAYER_A2_SERVES;
-            checkServerInTeam('team1');
-        }
+        currentState = states.TEAM1_SERVES;
+        checkServerInTeam('team1');
     } else {
         scores.team2++;
         scoreTeam2.innerText = scores.team2;
-        if (currentState === states.PLAYER_B1_SERVES) {
-            currentState = states.PLAYER_B1_SERVES;
-            checkServerInTeam('team2');
-        } else if (currentState === states.PLAYER_B2_SERVES) {
-            currentState = states.PLAYER_B2_SERVES;
-            checkServerInTeam('team2');
-        } else if (currentState === states.PLAYER_A1_SERVES) {
-            currentState = states.PLAYER_B1_SERVES;
-            checkServerInTeam('team2');
-        } else if (currentState === states.PLAYER_A2_SERVES) {
-            currentState = states.PLAYER_B2_SERVES;
-            checkServerInTeam('team2');
-        }
+        currentState = states.TEAM2_SERVES;
+        checkServerInTeam('team2');
     }
     updateServerDot();
     checkGameEnd();
