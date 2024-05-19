@@ -1,0 +1,88 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+#court {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    background-color: lightgreen;
+    border: 2px solid black;
+}
+
+#topHalf, #bottomHalf {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    display: flex;
+}
+
+#topHalf {
+    top: 0;
+    border-bottom: 3px solid white;
+}
+
+#bottomHalf {
+    bottom: 0;
+    border-top: 3px solid white;
+}
+
+.court-half {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.swap-button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    cursor: pointer;
+    padding: 5px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+.player {
+    display: inline-block;
+}
+
+.red-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+    margin-left: 5px;
+    visibility: hidden;
+}
+
+#scoreboard {
+    margin-left: 20px;
+}
+
+#scoreboard div {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#scoreboard button {
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+}
+
+#scoreboard span {
+    font-size: 24px;
+    margin: 0 10px;
+}
