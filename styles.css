@@ -19,7 +19,7 @@
     height: 3.79%;
     width: 8.21%;
     top: 259px;
-    left: 200px;
+    left: 230px;
     max-width: 100%;
     overflow: hidden;
     max-height: 100%;
@@ -30,7 +30,7 @@
     height: 3.79%;
     width: 8.21%;
     top: 259px;
-    left: 80px;
+    left: 110px;
     max-width: 100%;
     overflow: hidden;
     max-height: 100%;
@@ -41,7 +41,7 @@
     height: 3.79%;
     width: 8.21%;
     top: 522px;
-    left: 200px;
+    left: 230px;
     max-width: 100%;
     overflow: hidden;
     max-height: 100%;
@@ -52,7 +52,7 @@
     height: 3.79%;
     width: 8.21%;
     top: 522px;
-    left: 80px;
+    left: 110px;
     max-width: 100%;
     overflow: hidden;
     max-height: 100%;
@@ -114,36 +114,6 @@
     box-sizing: border-box;
     color: #fff;
 }
-.buttonT2 {
-    position: absolute;
-    top: 342px;
-    left: 157px;
-    border-radius: 8px;
-    background-color: #eee;
-    width: 62px;
-    height: 30px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 0px 16px;
-    box-sizing: border-box;
-}
-.buttonT1 {
-    position: absolute;
-    top: 441px;
-    left: 157px;
-    border-radius: 8px;
-    background-color: #eee;
-    width: 62px;
-    height: 30px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 0px 16px;
-    box-sizing: border-box;
-}
 .iphone-13-mini-1 {
     width: 100%;
     position: relative;
@@ -156,3 +126,64 @@
     font-family: Inter;
 }
 
+.buttonT1, .buttonT2 {
+    position: absolute;
+    border-radius: 8px;
+    background-color: #eee;
+    width: 80px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 16px;
+    box-sizing: border-box;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.buttonT1 {
+    top: 412px;
+    left: 280px;
+}
+
+.buttonT2 {
+    top: 370px;
+    left: 280px;
+}
+
+.start-game {
+    position: absolute;
+    top: 747px;
+    left: 132px;
+    border-radius: 8px;
+    background-color: #000;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 16px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.score-labels {
+    position: absolute;
+    top: 370px;
+    left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.scoreT1, .scoreT2 {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
