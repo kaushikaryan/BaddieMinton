@@ -1,51 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Badminton Score Tracker</title>
-    <link rel="stylesheet" href="styles.css">
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	
+  	<link rel="stylesheet"  href="./styles.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" />
+  	
+  	
+  	
 </head>
-
 <body>
-    <div id="court">
-        <div id="topHalf">
-            <div id="topLeft" class="court-half">
-                <span class="player" id="Player3">Player3</span>
-                <span class="red-dot" id="dot-Player3"></span>
-            </div>
-            <div id="topRight" class="court-half">
-                <span class="player" id="Player4">Player4</span>
-                <span class="red-dot" id="dot-Player4"></span>
-            </div>
-            <div class="swap-button" onclick="swapPlayers('top')">Swap</div>
-        </div>
-        <div id="bottomHalf">
-            <div id="bottomLeft" class="court-half">
-                <span class="player" id="Player1">Player1</span>
-                <span class="red-dot" id="dot-Player1"></span>
-            </div>
-            <div id="bottomRight" class="court-half">
-                <span class="player" id="Player2">Player2</span>
-                <span class="red-dot" id="dot-Player2"></span>
-            </div>
-            <div class="swap-button" onclick="swapPlayers('bottom')">Swap</div>
-        </div>
-    </div>
-    <div id="scoreboard">
-        <div>
-            <h2>Team 2</h2>
-            <span id="score-team2">0</span>
-            <button onclick="incrementTeam2()">+</button>
-        </div>
-        <div>
-            <h2>Team 1</h2>
-            <span id="score-team1">0</span>
-            <button onclick="incrementTeam1()">+</button>
-        </div>
-    </div>
-    <script src="scripts.js"></script>
+  	
+  	<div class="iphone-13-mini-1">
+    		<div class="iphone-13-mini-1-child">
+    		</div>
+    		<img class="game-dark-1" alt="" src="Images\Game_Dark.png">
+    		
+    		<img class="shuttleplayer3" alt="" src="Images/Shuttle.png">
+    		
+    		<img class="shuttleplayer4" alt="" src="Images/Shuttle.png">
+    		
+    		<img class="shuttleplayer2" alt="" src="Images/Shuttle.png">
+    		
+    		<img class="shuttleplayer1" alt="" src="Images/Shuttle.png">
+    		
+    		<div class="iconplayer4">
+    		</div>
+    		<div class="iconplayer3">
+    		</div>
+    		<div class="iconplayer2">
+    		</div>
+    		<div class="iconplayer1">
+    		</div>
+    		<div class="primary-button">
+      			<div class="end-game">End Game</div>
+    		</div>
+    		<div class="buttonT1">
+      			<div class="end-game">Swap1</div>
+    		</div>
+    		<div class="buttonT2">
+      			<div class="end-game">Swap2</div>
+    		</div>
+  	</div>
 </body>
-
 </html>

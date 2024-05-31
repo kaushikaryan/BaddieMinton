@@ -9,7 +9,7 @@ const states = {
 // Initialize state and scores
 let currentState = states.START;
 let scores = { team1: 0, team2: 0 };
-let serving = 'Player1'; // Initially, Player1 is serving
+let serving = 'even1'; // Initially, Player1 is serving
 
 // DOM elements
 const scoreTeam1 = document.getElementById('score-team1');
@@ -21,10 +21,10 @@ const dotPlayer4 = document.getElementById('dot-Player4');
 
 // Update the server dot visibility based on current server
 function updateServerDot() {
-    dotPlayer1.style.visibility = serving === 'odd1' ? 'visible' : 'hidden';
-    dotPlayer2.style.visibility = serving === 'even1' ? 'visible' : 'hidden';
-    dotPlayer3.style.visibility = serving === 'even2' ? 'visible' : 'hidden';
-    dotPlayer4.style.visibility = serving === 'odd2' ? 'visible' : 'hidden';
+    shuttlePlayer1.style.visibility = serving === 'odd1' ? 'visible' : 'hidden';
+    shuttleplayer2.style.visibility = serving === 'even1' ? 'visible' : 'hidden';
+    shuttleplayer3.style.visibility = serving === 'even2' ? 'visible' : 'hidden';
+    shuttleplayer4.style.visibility = serving === 'odd2' ? 'visible' : 'hidden';
 }
 
 // Start the game
@@ -102,3 +102,6 @@ function incrementTeam2() {
 
 // Initialize the game
 startGame();
+
+document.getElementById('buttonT1').addEventListener('click', incrementTeam1);
+document.getElementById('buttonT2').addEventListener('click', incrementTeam2);

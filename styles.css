@@ -1,88 +1,158 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
-}
-
-#court {
-    position: relative;
-    width: 400px;
-    height: 600px;
-    background-color: lightgreen;
-    border: 2px solid black;
-}
-
-#topHalf, #bottomHalf {
+.iphone-13-mini-1-child {
     position: absolute;
-    width: 100%;
-    height: 50%;
-    display: flex;
+    top: 723px;
+    left: 143px;
+    background-color: #d9d9d9;
+    width: 89px;
+    height: 89px;
 }
-
-#topHalf {
-    top: 0;
-    border-bottom: 3px solid white;
-}
-
-#bottomHalf {
-    bottom: 0;
-    border-top: 3px solid white;
-}
-
-.court-half {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.swap-button {
+.game-dark-1 {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 50%;
-    cursor: pointer;
-    padding: 5px;
-    background-color: #ffffff;
-    border: 1px solid #000000;
-    border-radius: 5px;
+    top: 0px;
+    left: 0px;
+    width: 375px;
+    height: 812px;
+    object-fit: cover;
 }
-
-.player {
-    display: inline-block;
+.shuttleplayer3 {
+    position: absolute;
+    height: 3.79%;
+    width: 8.21%;
+    top: 259px;
+    left: 200px;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: contain;
 }
-
-.red-dot {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background-color: red;
+.shuttleplayer4 {
+    position: absolute;
+    height: 3.79%;
+    width: 8.21%;
+    top: 259px;
+    left: 80px;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: contain;
+}
+.shuttleplayer2 {
+    position: absolute;
+    height: 3.79%;
+    width: 8.21%;
+    top: 522px;
+    left: 200px;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: contain;
+}
+.shuttleplayer1 {
+    position: absolute;
+    height: 3.79%;
+    width: 8.21%;
+    top: 522px;
+    left: 80px;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: contain;
+}
+.iconplayer4 {
+    position: absolute;
+    top: 137px;
+    left: 78px;
     border-radius: 50%;
-    margin-left: 5px;
-    visibility: hidden;
+    background-color: #d9d9d9;
+    width: 100px;
+    height: 100px;
 }
-
-#scoreboard {
-    margin-left: 20px;
+.iconplayer3 {
+    position: absolute;
+    top: 137px;
+    left: 198px;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    width: 100px;
+    height: 100px;
 }
-
-#scoreboard div {
-    margin-bottom: 20px;
+.iconplayer2 {
+    position: absolute;
+    top: 575px;
+    left: 198px;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    width: 100px;
+    height: 100px;
+}
+.iconplayer1 {
+    position: absolute;
+    top: 575px;
+    left: 78px;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    width: 100px;
+    height: 100px;
+}
+.end-game {
+    position: relative;
+    line-height: 150%;
+    font-weight: 500;
+}
+.primary-button {
+    position: absolute;
+    top: 747px;
+    left: 132px;
+    border-radius: 8px;
+    background-color: #000;
+    height: 40px;
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
+    padding: 0px 16px;
+    box-sizing: border-box;
+    color: #fff;
 }
-
-#scoreboard button {
-    font-size: 20px;
-    width: 30px;
+.buttonT2 {
+    position: absolute;
+    top: 342px;
+    left: 157px;
+    border-radius: 8px;
+    background-color: #eee;
+    width: 62px;
     height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 16px;
+    box-sizing: border-box;
+}
+.buttonT1 {
+    position: absolute;
+    top: 441px;
+    left: 157px;
+    border-radius: 8px;
+    background-color: #eee;
+    width: 62px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 16px;
+    box-sizing: border-box;
+}
+.iphone-13-mini-1 {
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    height: 812px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 16px;
+    color: #000;
+    font-family: Inter;
 }
 
-#scoreboard span {
-    font-size: 24px;
-    margin: 0 10px;
-}
