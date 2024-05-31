@@ -1,107 +1,67 @@
-// Define states
-const states = {
-    START: 'Start',
-    TEAM1_SERVES: 'Team 1 Serves',
-    TEAM2_SERVES: 'Team 2 Serves',
-    GAME_OVER: 'Game Over'
-};
+const scores = { team1: 0, team2: 0 };
+let serving = '';
+let gameStarted = false;
 
-// Initialize state and scores
-let currentState = states.START;
-let scores = { team1: 0, team2: 0 };
-let serving = 'even1'; // Initially, Player1 is serving
-
-// DOM elements
-const scoreTeam1 = document.getElementById('score-team1');
-const scoreTeam2 = document.getElementById('score-team2');
-const dotPlayer1 = document.getElementById('dot-Player1');
-const dotPlayer2 = document.getElementById('dot-Player2');
-const dotPlayer3 = document.getElementById('dot-Player3');
-const dotPlayer4 = document.getElementById('dot-Player4');
-
-// Update the server dot visibility based on current server
-function updateServerDot() {
-    shuttlePlayer1.style.visibility = serving === 'odd1' ? 'visible' : 'hidden';
-    shuttleplayer2.style.visibility = serving === 'even1' ? 'visible' : 'hidden';
-    shuttleplayer3.style.visibility = serving === 'even2' ? 'visible' : 'hidden';
-    shuttleplayer4.style.visibility = serving === 'odd2' ? 'visible' : 'hidden';
-}
-
-// Start the game
-function startGame() {
-    currentState = states.TEAM1_SERVES;
-    serving = 'even1';
-    updateServerDot();
-    scores.team1 = 0;
-    scores.team2 = 0;
-    scoreTeam1.innerText = scores.team1;
-    scoreTeam2.innerText = scores.team2;
-}
-
-// Check if the game should end
-function checkGameEnd() {
-    if ((scores.team1 >= 21 || scores.team2 >= 21) && Math.abs(scores.team1 - scores.team2) >= 2) {
-        currentState = states.GAME_OVER;
-        alert('Game Over');
-    }
-}
-
-// Update the score and transition states based on who won the point
-function pointWonBy(team) {
-    if (currentState === states.GAME_OVER) return;
-
+function checkServerInTeam(team) {
     if (team === 'team1') {
-        scores.team1++;
-        scoreTeam1.innerText = scores.team1;
-        currentState = states.TEAM1_SERVES;
-        checkServerInTeam('team1');
-    } else {
-        scores.team2++;
-        scoreTeam2.innerText = scores.team2;
-        currentState = states.TEAM2_SERVES;
-        checkServerInTeam('team2');
-    }
-    updateServerDot();
-    checkGameEnd();
-}
-
-function checkServerInTeam(team){
-    if(team === 'team1'){
-        if(scores.team1%2==0){
+        if (scores.team1 % 2 === 0) {
             serving = 'even1';
         } else {
             serving = 'odd1';
         }
     } else {
-        if(scores.team2%2==0){
+        if (scores.team2 % 2 === 0) {
             serving = 'even2';
         } else {
             serving = 'odd2';
         }
     }
+    updateShuttleVisibility();
 }
 
-// Swap players within the same team
-function swapPlayers(team) {
-    const leftPlayer = document.getElementById(`${team}Left`).innerText;
-    const rightPlayer = document.getElementById(`${team}Right`).innerText;
-    document.getElementById(`${team}Left`).innerText = rightPlayer;
-    document.getElementById(`${team}Right`).innerText = leftPlayer;
-    updateServerDot();
+function updateShuttleVisibility() {
+    const shuttleIcons = document.querySelectorAll('.shuttleplayer1, .shuttleplayer2, .shuttleplayer3, .shuttleplayer4');
+    shuttleIcons.forEach(icon => icon.style.visibility = 'hidden');
+
+    if (serving === 'even1') {
+        document.querySelector('.shuttleplayer2').style.visibility = 'visible';
+    } else if (serving === 'odd1') {
+        document.querySelector('.shuttleplayer1').style.visibility = 'visible';
+    } else if (serving === 'even2') {
+        document.querySelector('.shuttleplayer4').style.visibility = 'visible';
+    } else if (serving === 'odd2') {
+        document.querySelector('.shuttleplayer3').style.visibility = 'visible';
+    }
 }
 
-// Increment score for Team 1
-function incrementTeam1() {
-        pointWonBy('team1');
+function updateScores() {
+    document.querySelector('.scoreT1').textContent = `Team 1 Score: ${scores.team1}`;
+    document.querySelector('.scoreT2').textContent = `Team 2 Score: ${scores.team2}`;
 }
 
-// Increment score for Team 2
-function incrementTeam2() {
-        pointWonBy('team2');
-}
+document.querySelector('.buttonT1').addEventListener('click', () => {
+    if (gameStarted) {
+        scores.team1++;
+        checkServerInTeam('team1');
+        updateScores();
+    }
+});
 
-// Initialize the game
-startGame();
+document.querySelector('.buttonT2').addEventListener('click', () => {
+    if (gameStarted) {
+        scores.team2++;
+        checkServerInTeam('team2');
+        updateScores();
+    }
+});
 
-document.getElementById('buttonT1').addEventListener('click', incrementTeam1);
-document.getElementById('buttonT2').addEventListener('click', incrementTeam2);
+document.querySelector('.start-game').addEventListener('click', () => {
+    gameStarted = true;
+    scores.team1 = 0;
+    scores.team2 = 0;
+    updateScores();
+    checkServerInTeam('team1');
+});
+
+// Initialize the game without starting it
+updateScores();
